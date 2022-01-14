@@ -2,6 +2,7 @@
 let app = new Vue ({
     el: '#app',
     data: {
+        timer : 0,
         current: 1,
         sliderArr: {
             items: [
@@ -46,8 +47,23 @@ let app = new Vue ({
             if(this.current < 0){
                 this.current = this.sliderArr.items.length - 1;
             }
+        },
+        makeActive: function (index){
+            this.current = index;
+        },
+        play: function() {
+            let start = this
+            this.timer = setInterval(function() {
+            start.next();
+            }, 3000);
+        },
+        playStop: function(){
+            clearInterval(this.timer);
         }
-    }
+    },
+    created: function(){
+            this.play();
+        }
 })
 
 

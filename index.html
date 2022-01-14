@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-2 items-container" id="item-holder">
                     <div v-for="(element, index) in sliderArr.items" class="sliderdimension">
-                        <img :src="element" class="w-100 h-100" alt="">
+                        <img :src="element" class="w-100 h-100" @click="makeActive(index)"  @mouseover="playStop" @mouseleave="play">
                     </div>
                     <div class="up" @click="prev()">&uarr;</div>
                     <div class="down" @click="next()">&darr;</div>
