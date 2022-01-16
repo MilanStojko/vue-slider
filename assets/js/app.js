@@ -38,7 +38,7 @@ let app = new Vue ({
         },
         next: function (){
             this.current ++;
-            if(this.current == this.sliderArr.items.length - 1){
+            if(this.current == this.sliderArr.items.length){
                 this.current = 0;
             }
         },
